@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Description>Simplify your .NET Core integration tests by just inheriting from IntegrationTestBase . This library has all the boilerplate code so you can write the scenarios with xUnit.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Copyright>Microsoft Corporation. All rights reserved.</Copyright>
+    <Version>3.1.0</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="3.1.3" />
