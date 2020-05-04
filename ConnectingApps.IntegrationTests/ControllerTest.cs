@@ -1,6 +1,6 @@
-﻿using System;
-using ConnectingApps.TestDemo;
+﻿using ConnectingApps.TestDemo;
 using ConnectingApps.TestDemo.Controllers;
+using ConnectingApps.TestEnablers;
 using Xunit;
 
 namespace ConnectingApps.IntegrationTests
@@ -14,7 +14,7 @@ namespace ConnectingApps.IntegrationTests
         }
 
         [Fact]
-        public void Doe()
+        public void VerifyIfInstanceExist()
         {
             Assert.NotNull(_testInstance);
         }

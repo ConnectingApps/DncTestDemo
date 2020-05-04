@@ -6,9 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
-namespace ConnectingApps.IntegrationTests
+namespace ConnectingApps.TestEnablers
 {
-    public abstract class IntegrationTestBase<TStartup,TestType> : IDisposable, IClassFixture<CustomWebApplicationFactory<TStartup>> where TStartup : class where TestType : class
+    public abstract class IntegrationTestBase<TStartup,TTestType> : IDisposable, IClassFixture<CustomWebApplicationFactory<TStartup>> where TStartup : class where TTestType : class
     {
         protected readonly HttpClient HttpClient;
 
@@ -23,14 +23,14 @@ namespace ConnectingApps.IntegrationTests
                 whb.ConfigureTestServices(sc =>
                 {
                     var scope = sc.BuildServiceProvider().CreateScope();
-                    var testInstance = scope.ServiceProvider.GetService<TestType>();
+                    var testInstance = scope.ServiceProvider.GetService<TTestType>();
                     SetTestInstance(testInstance);
                 });
             }).CreateClient();
         }
 
 
-        protected abstract void SetTestInstance(TestType testInstance);
+        protected abstract void SetTestInstance(TTestType testInstance);
 
         protected virtual Dictionary<string, string> GetConfiguration()
         {
