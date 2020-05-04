@@ -8,11 +8,11 @@ using Xunit;
 
 namespace ConnectingApps.IntegrationTests
 {
-    public abstract class IntegrationTestBase<TStartup,TestType> : IDisposable, IClassFixture<CustomWebapplicationFactory<TStartup>> where TStartup : class where TestType : class
+    public abstract class IntegrationTestBase<TStartup,TestType> : IDisposable, IClassFixture<CustomWebApplicationFactory<TStartup>> where TStartup : class where TestType : class
     {
         protected readonly HttpClient HttpClient;
 
-        protected IntegrationTestBase(CustomWebapplicationFactory<TStartup> factory)
+        protected IntegrationTestBase(CustomWebApplicationFactory<TStartup> factory)
         {
             HttpClient = factory.WithWebHostBuilder(whb =>
             {

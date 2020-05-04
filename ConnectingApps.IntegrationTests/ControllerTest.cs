@@ -9,7 +9,7 @@ namespace ConnectingApps.IntegrationTests
     {
         private WeatherForecastController _testInstance;
 
-        public ControllerTest(CustomWebapplicationFactory<Startup> factory) : base(factory)
+        public ControllerTest(CustomWebApplicationFactory<Startup> factory) : base(factory)
         {
         }
 
