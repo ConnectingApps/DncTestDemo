@@ -1,11 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <IsPackable>true</IsPackable>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Description>Simplify your .NET Core integration tests by just inheriting from IntegrationTestBase . This library has all the boilerplate code so you can write the scenarios with xUnit.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Copyright>Microsoft Corporation. All rights reserved.</Copyright>
+    <Copyright>Connecting Apps. All rights reserved.</Copyright>
     <Version>3.1.0</Version>
+    <OutputType>Dll</OutputType>
+    <PackageId>ConnectingApps.TestEnablers</PackageId>
+    <Authors>Daan Acohen</Authors>
+    <Company>Connecting Apps</Company>
+    <PackageDescription>This package adds an Octocat!</PackageDescription>
+    <RepositoryUrl>https://github.com/ConnectingApps/DncTestDemo</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/ConnectingApps/DncTestDemo</PackageProjectUrl>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="3.1.3" />
