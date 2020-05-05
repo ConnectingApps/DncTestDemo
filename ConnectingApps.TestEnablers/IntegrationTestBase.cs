@@ -14,11 +14,12 @@ namespace ConnectingApps.TestEnablers
 
         protected IntegrationTestBase(CustomWebApplicationFactory<TStartup> factory)
         {
+            var extraConfiguration = GetConfiguration();
             HttpClient = factory.WithWebHostBuilder(whb =>
             {
                 whb.ConfigureAppConfiguration((context, configbuilder) =>
                 {
-                    configbuilder.AddInMemoryCollection(null);
+                    configbuilder.AddInMemoryCollection(extraConfiguration);
                 });
                 whb.ConfigureTestServices(sc =>
                 {

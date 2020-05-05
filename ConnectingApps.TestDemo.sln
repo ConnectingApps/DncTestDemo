@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConnectingApps.TestEnablers
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConnectingApps.TestDemo", "ConnectingApps.TestDemo\ConnectingApps.TestDemo.csproj", "{090A6652-66C5-42F3-B75B-0D2B436AFBDB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConnectingApps.IntegrationTests.NugetExample", "ConnectingApps.IntegrationTests.NugetExample\ConnectingApps.IntegrationTests.NugetExample.csproj", "{C8E1A4DF-B4A2-4133-9E3B-BB808151DDB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{090A6652-66C5-42F3-B75B-0D2B436AFBDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{090A6652-66C5-42F3-B75B-0D2B436AFBDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{090A6652-66C5-42F3-B75B-0D2B436AFBDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8E1A4DF-B4A2-4133-9E3B-BB808151DDB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8E1A4DF-B4A2-4133-9E3B-BB808151DDB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8E1A4DF-B4A2-4133-9E3B-BB808151DDB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8E1A4DF-B4A2-4133-9E3B-BB808151DDB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

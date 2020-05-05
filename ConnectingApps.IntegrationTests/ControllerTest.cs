@@ -1,4 +1,5 @@
-﻿using ConnectingApps.TestDemo;
+﻿using System.Collections.Generic;
+using ConnectingApps.TestDemo;
 using ConnectingApps.TestDemo.Controllers;
 using ConnectingApps.TestEnablers;
 using Xunit;
@@ -22,6 +23,13 @@ namespace ConnectingApps.IntegrationTests
         protected override void SetTestInstance(WeatherForecastController testInstance)
         {
             _testInstance = testInstance;
+        }
+
+        protected override Dictionary<string, string> GetConfiguration()
+        {
+            var configuration = base.GetConfiguration();
+            configuration.Add("AppSettingsKey", "AppSettingsValue");
+            return configuration;
         }
     }
 }

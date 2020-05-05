@@ -6,7 +6,7 @@
     <Description>Simplify your .NET Core integration tests by just inheriting from IntegrationTestBase . This library has all the boilerplate code so you can write the scenarios with xUnit.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright>Connecting Apps. All rights reserved.</Copyright>
-    <Version>3.1.0</Version>
+    <Version>3.1.1</Version>
     <OutputType>Dll</OutputType>
     <PackageId>ConnectingApps.TestEnablers</PackageId>
     <Authors>Daan Acohen</Authors>
