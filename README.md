@@ -73,7 +73,7 @@ Now it is time to write the c# code that does the real work.
 
 ````
 
-As you can see, to inherit from `IntegrationTestBase`, we need to specify the `Startup` class and the class we want to write our integration tests for. For each test, the tes instance is set for you by a call to `SetTestInstance` and you can, for each test, modify or add appsettings with `GetConfiguration`.
+As you can see, to inherit from `IntegrationTestBase`, we need to specify the `Startup` class and the class we want to write our integration tests for. For each test, the test instance is set for you by a call to `SetTestInstance` and you can, for each test, modify or add appsettings with `GetConfiguration`.
 
 A directly working example can be found [here](https://github.com/ConnectingApps/DncTestDemo/tree/master/ConnectingApps.IntegrationTests.NugetExample). If you prefer to write all the boiler plate code yourself or contribute to our boilerplate code, read [this](https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-3.1).
 
