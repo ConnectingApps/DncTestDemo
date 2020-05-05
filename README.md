@@ -15,7 +15,7 @@ Here is how your project file should look like:
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ConnectingApps.TestEnablers" Version="3.1.1" />
+    <PackageReference Include="ConnectingApps.TestEnablers" Version="3.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="3.1.3" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1">
       <PrivateAssets>all</PrivateAssets>
@@ -77,4 +77,35 @@ As you can see, to inherit from `IntegrationTestBase`, we need to specify the `S
 
 A directly working example can be found [here](https://github.com/ConnectingApps/DncTestDemo/tree/master/ConnectingApps.IntegrationTests.NugetExample). If you prefer to write all the boiler plate code yourself or contribute to our boilerplate code, read [this](https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-3.1).
 
+It is also possible to do directly test your [Refit](https://github.com/reactiveui/refit) client by just inheriting from `IntegrationTestBase`. Here is an example:
 
+````csharp
+    public class WeatherForecastClientTest : RefitClientTestBase<Startup, IWeatherForecastClient>
+    {
+        public WeatherForecastClientTest(CustomWebApplicationFactory<Startup> factory) : base(factory, 5743, false)
+        {
+        }
+
+        [Fact]
+        public async Task TestClient()
+        {
+            var response = await RefitClient.GetForecast();
+            await response.EnsureSuccessStatusCodeAsync();
+            var content = response.Content.ToList();
+            Assert.Equal(5, content.Count);
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        }
+
+        protected override IWeatherForecastClient CreateRefitClient(HttpClient httpClient)
+        {
+            return RestService.For<IWeatherForecastClient>(httpClient);
+        }
+
+        protected override Dictionary<string, string> GetConfiguration()
+        {
+            var configuration = base.GetConfiguration();
+            configuration.Add("AppSettingsKey", "AppSettingsValue");
+            return configuration;
+        }
+    }
+````
