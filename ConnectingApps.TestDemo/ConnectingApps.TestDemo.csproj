@@ -4,5 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ConnectingApps.TestDemo.RefitClient\ConnectingApps.TestDemo.RefitClient.csproj" />
+  </ItemGroup>
+
 
 </Project>

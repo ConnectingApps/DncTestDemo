@@ -3,10 +3,10 @@
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Description>Simplify your .NET Core integration tests by just inheriting from IntegrationTestBase . This library has all the boilerplate code so you can write the scenarios with xUnit.</Description>
+    <Description>Simplify your .NET Core integration tests by just inheriting from IntegrationTestBase . This library has all the boilerplate code so you can write the scenarios with xUnit.  You can also directly test your refit client with by inheriting your xUnit test class from RefitClientTestBase. Your application will be self hosted inside the test so no deployment is needed.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright>Connecting Apps. All rights reserved.</Copyright>
-    <Version>3.1.1</Version>
+    <Version>3.1.2</Version>
     <OutputType>Dll</OutputType>
     <PackageId>ConnectingApps.TestEnablers</PackageId>
     <Authors>Daan Acohen</Authors>
@@ -14,6 +14,7 @@
     <PackageDescription>Simplify your .NET Core integration tests by just inheriting from IntegrationTestBase . This library has all the boilerplate code so you can write the scenarios with xUnit.</PackageDescription>
     <RepositoryUrl>https://github.com/ConnectingApps/DncTestDemo</RepositoryUrl>
     <PackageProjectUrl>https://github.com/ConnectingApps/DncTestDemo</PackageProjectUrl>
+    <PackageLicenseExpression>GNU General Public License v3.0</PackageLicenseExpression>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="3.1.3" />
