@@ -11,7 +11,7 @@
     <PackageId>ConnectingApps.TestEnablers</PackageId>
     <Authors>Daan Acohen</Authors>
     <Company>Connecting Apps</Company>
-    <PackageDescription>This package adds an Octocat!</PackageDescription>
+    <PackageDescription>Simplify your .NET Core integration tests by just inheriting from IntegrationTestBase . This library has all the boilerplate code so you can write the scenarios with xUnit.</PackageDescription>
     <RepositoryUrl>https://github.com/ConnectingApps/DncTestDemo</RepositoryUrl>
     <PackageProjectUrl>https://github.com/ConnectingApps/DncTestDemo</PackageProjectUrl>
   </PropertyGroup>
