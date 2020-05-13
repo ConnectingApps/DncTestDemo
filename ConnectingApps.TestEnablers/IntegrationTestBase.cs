@@ -11,6 +11,8 @@ namespace ConnectingApps.TestEnablers
     public abstract class IntegrationTestBase<TStartup,TTestType> : IDisposable, IClassFixture<CustomWebApplicationFactory<TStartup>> where TStartup : class where TTestType : class
     {
         protected readonly HttpClient HttpClient;
+        private IServiceScope _serviceScope;
+        private ServiceProvider _serviceProvider;
 
         protected IntegrationTestBase(CustomWebApplicationFactory<TStartup> factory)
         {
@@ -23,13 +25,13 @@ namespace ConnectingApps.TestEnablers
                 });
                 whb.ConfigureTestServices(sc =>
                 {
-                    var scope = sc.BuildServiceProvider().CreateScope();
-                    var testInstance = scope.ServiceProvider.GetService<TTestType>();
+                    _serviceProvider = sc.BuildServiceProvider();
+                    _serviceScope = _serviceProvider.CreateScope();
+                    var testInstance = _serviceScope.ServiceProvider.GetService<TTestType>();
                     SetTestInstance(testInstance);
                 });
             }).CreateClient();
         }
-
 
         protected abstract void SetTestInstance(TTestType testInstance);
 
@@ -42,6 +44,8 @@ namespace ConnectingApps.TestEnablers
         {
             if (disposing)
             {
+                _serviceProvider.Dispose();
+                _serviceScope.Dispose();
                 HttpClient.Dispose();
             }
         }
